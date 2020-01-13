@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menus semaine{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Menus pour la semaine du au </h1>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3">Entrée</div>
+            <div class="col-3">Plat</div>
+            <div class="col-3">Dessert</div>
+            {% for menu in menuWeekS %}
+                {% if menu.numberDay==1 %}
+                    <div class="col-2">Lundi</div>
+                    <div class="col-3">{{ menu.entree }}</div>
+                    <div class="col-3">{{ menu.plat }}</div>
+                    <div class="col-3">{{ menu.dessert }}</div>
+                {% endif %}
+                {% if menu.numberDay==2 %}
+                    <div class="col-2">Mardi</div>
+                    <div class="col-3">{{ menu.entree }}</div>
+                    <div class="col-3">{{ menu.plat }}</div>
+                    <div class="col-3">{{ menu.dessert }}</div>
+                {% endif %}
+                {% if menu.numberDay==3 %}
+                    <div class="col-2">Mercredi</div>
+                    <div class="col-3">{{ menu.entree }}</div>
+                    <div class="col-3">{{ menu.plat }}</div>
+                    <div class="col-3">{{ menu.dessert }}</div>
+                {% endif %}
+                {% if menu.numberDay==4 %}
+                    <div class="col-2">Jeudi</div>
+                    <div class="col-3">{{ menu.entree }}</div>
+                    <div class="col-3">{{ menu.plat }}</div>
+                    <div class="col-3">{{ menu.dessert }}</div>
+                {% endif %}
+                {% if menu.numberDay==5 %}
+                    <div class="col-2">Vendredi</div>
+                    <div class="col-3">{{ menu.entree }}</div>
+                    <div class="col-3">{{ menu.plat }}</div>
+                    <div class="col-3">{{ menu.dessert }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
